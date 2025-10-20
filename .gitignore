@@ -1,0 +1,27 @@
+# Godot
+.godot/
+.import/
+*.import
+export_presets.cfg
+
+# Auto-generated scene files
+breez.tscn
+*.tscn.remap
+
+/test_project
+
+rust/breez_godot/examples/
+rust/breez_godot/target/
+breez_data/
+
+# IDE
+.vscode/
+.idea/
+.editorconfig
+
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

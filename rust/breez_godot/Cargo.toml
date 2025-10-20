@@ -1,0 +1,12 @@
+[package]
+name = "breez_godot"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+godot = "0.4.0"
+breez-sdk-spark = { git = "https://github.com/breez/spark-sdk", tag = "0.2.6" }
+tokio = { version = "1", features = ["full"] }
