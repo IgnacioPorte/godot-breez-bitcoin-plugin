@@ -4,8 +4,7 @@ use breez_sdk_spark::{
     GetInfoRequest, ReceivePaymentRequest, ReceivePaymentMethod,
     PrepareSendPaymentRequest, SendPaymentRequest, SendPaymentOptions,
     ListPaymentsRequest, SyncWalletRequest, ListUnclaimedDepositsRequest,
-    ClaimDepositRequest, Fee, RegisterLightningAddressRequest,
-    CheckLightningAddressRequest,
+    ClaimDepositRequest, Fee, PaymentDetails,
 };
 use std::sync::{Arc, Mutex};
 use tokio::runtime::Runtime;
@@ -381,6 +380,15 @@ impl BreezNode {
                     dict.set("status", payment.status.to_string());
                     dict.set("payment_type", payment.payment_type.to_string());
                     dict.set("method", payment.method.to_string());
+                    
+                    let description = match &payment.details {
+                        Some(PaymentDetails::Lightning { description, .. }) => {
+                            description.clone().unwrap_or_default()
+                        }
+                        _ => String::new()
+                    };
+                    dict.set("description", description);
+                    
                     array.push(&dict);
                 }
             }

@@ -5,8 +5,3 @@ compatibility_minimum = 4.1
 [libraries]
 macos.debug = "res://addons/breez_bitcoin/bin/macos/libbreez_godot.dylib"
 macos.release = "res://addons/breez_bitcoin/bin/macos/libbreez_godot.dylib"
-linux.debug.x86_64 = "res://addons/breez_bitcoin/bin/linux/libbreez_godot.so"
-linux.release.x86_64 = "res://addons/breez_bitcoin/bin/linux/libbreez_godot.so"
-windows.debug.x86_64 = "res://addons/breez_bitcoin/bin/windows/breez_godot.dll"
-windows.release.x86_64 = "res://addons/breez_bitcoin/bin/windows/breez_godot.dll"
-
